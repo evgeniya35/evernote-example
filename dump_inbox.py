@@ -1,9 +1,9 @@
 #!/usr/bin/env python 
 import argparse
 
+from bs4 import BeautifulSoup
 from evernote.api.client import EvernoteClient
 from evernote.api.client import NoteStore
-from bs4 import BeautifulSoup
 
 from config import Settings
 
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     client = EvernoteClient(
         token=config.EVERNOTE_PERSONAL_TOKEN,
-        sandbox=False
+        sandbox=True
     )
     note_store = client.get_note_store()
 
